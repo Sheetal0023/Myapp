@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sheetal</title>
+        <link rel="icon" href="./img/icon.png" type="image/icon">
+        <link rel="stylesheet" href="./css/style.css">
+        {{>style}}
+    </head>
+    <body>
+        {{>header}}
+        <div class="login-page">
+            <h2>Create Task</h2>
+            <form action="/createtask" method="post">
+                <p>Discription</p>
+                <input type="text" name="discription" placeholder="discription">
+                <p>Completed</p>
+                <input type="text" name="completed" placeholder="true/false">
+                <button type="submit" >Create Task</button>
+            </form>
+        <span>Create task </span>
+        </div>
+        <div class="footer">{{>footer}}</div>
+
+    </body>
+</html>

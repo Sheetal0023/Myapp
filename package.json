@@ -1,0 +1,33 @@
+{
+  "name": "my-first-website-main",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": " env-cmd -f ./config/dev.env nodemon src/index.js -js,e"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "env-cmd": "^10.1.0",
+    "express": "^4.19.2",
+    "fast-two-sms": "^3.0.0",
+    "generate-sms-verification-code": "^1.0.5",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.6.2",
+    "mongoose": "^8.4.0",
+    "node-rocketsms": "^0.2.1",
+    "twilio": "^5.1.0",
+    "unirest": "^0.6.0",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

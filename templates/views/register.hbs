@@ -1,0 +1,97 @@
+{{!-- <!DOCTYPE html>
+<html>
+    <head>
+           <title>Sheetal</title>
+        <link rel="icon" href="./img/icon.png" type="image/icon">
+        <link rel="stylesheet" href="./css/style.css">
+        {{>style}}
+    </head>
+    <body>
+       {{>header}}
+        <div class="login-page">
+        <form action="/register" method="post" >
+        <h2>Sign Up </h2>
+        <p>Username</p>
+        <input type="text" name="username" placeholder="name" >
+        <p>E-mail</p>
+        <input type="text" name="email" placeholder="email" >
+        <p>Password</p>
+        <input type="password" name="password" placeholder="password"  > 
+        <p>Phone number</p>
+        <input type="number" name="phone"  placeholder="Phone.no" >
+        <button  type="submit">submit</button>
+        </form>
+        <span> Already register <a class="link-register" href="/login">Login</a></span>
+        </div>
+       <div class="footer">{{>footer}}</div>
+
+    </body>
+</html>  --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New User</title>
+  <link rel="stylesheet" href="./css/signup.css">
+</head>
+<body>
+<div class="nav">
+  <div class="navbox">
+    <a href=""><img src="./img/zoho logo.png" alt="" sizes="" srcset="" width="150px" height="auto"></a>
+  </div>
+  <div class="navbox">
+    <a href="">Have a app Account?</a>
+    <a class="highlight" href=""> SIGN IN</a>
+  </div>
+</div>
+
+
+<div class="main-body">
+  <form action="/register" method="post">
+    <div class="container">
+      <div class="heading box"><h2>Start with free account today.&nbsp;&nbsp;&nbsp;&nbsp;</h2></div>
+      <div class="box">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" value={{body.username}}>
+        <label for="username" class="error">{{errorUsername}}</label>
+      </div>
+      <div class="box">
+        <label for="email">Email address</label>
+        <input type="text" name="email" id="email" value={{body.email}}>
+        <label for="email" class="error">{{errorEmail}}</label>
+      </div>
+      <div class="box">
+        <label for="password">Password</label>
+        <input type="password" name="password" class="password" id="password">
+        <img src="./img/eye.png" alt="" class="passwordIcon" width="35px" height="35px" id="passwordImg">
+        <label for="password" class="error">{{errorPassword}}</label>
+      </div>
+      <div class="box icon">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" class="password">
+        <label for="password" class="error">{{errorNotMatch}}</label>
+      </div>
+      <div class="box">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" name="phoneNumber" id="phoneNumber" value={{body.phoneNumber}}>
+        <label for="phoneNumber" class="error">{{errorPhone}}</label>
+      </div>
+      <label for="radio">
+      <input type="checkbox" name="agreement">
+      I have agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>  
+      </label>
+      <label for="checkbox" class="error">{{errorCheck}}</label>
+      <div class="box button">
+        <button type="submit">SIGN UP FOR FREE</button>
+      </div>
+
+    </div>
+  </form>
+
+</div>
+<script src="./js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+{{!-- <!DOCTYPE html>
+<html>
+    <head>
+            <title>Sheetal</title>
+            <link rel="icon" href="./img/icon.png" type="image/icon">
+            <link rel="stylesheet" href="./css/style.css">
+            {{>style}}
+    </head>
+    <body>
+        {{>header}}
+        <div class="login-page">
+            <h2>OTP Verification</h2>
+        <form  action="/otp" method="post">
+            <p>OTP send to your Phone number</p>
+            <input type="password" name="otp" placeholder="OTP" required>
+            <button type="submit" >Verify</button>
+        </form>
+        <span class="link-register">Press Verify to contiune</span>
+        </div>
+        <div class="footer">{{>footer}}</div>
+    </body>
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recovery</title>
+  <link rel="stylesheet" href="./css/forgot.css">
+</head>
+<body>
+<div class="nav">
+  <div class="navbox">
+    <a href=""><img src="./img/zoho logo.png" alt="" sizes="" srcset="" width="150px" height="auto"></a>
+  </div>
+  <div class="navbox">
+    <a href="">Have a app Account?</a>
+    <a class="highlight" href=""> SIGN IN</a>
+  </div>
+</div>
+
+
+<div class="main-body">
+  <form action="/mobileNumber" method="post">
+    <div class="container forgot">
+      <div class="heading box"><h2>Recover Password &nbsp;&nbsp;&nbsp;&nbsp;</h2></div>
+      <p>Your Phone is {{hidden}} </p>
+      <div class="box">
+        <label for="phone">Enter Your Phone Number</label>
+        <input type="text" name="phone" id="phone" value="{{body.phone}}" placeholder="Mobile number">
+        <label for="email" class="error">{{errorEmail}}</label>
+      </div>
+      <div class="box button">
+        <button type="submit">Get OTP</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+<script src="./js/chat.js"></script>
+</body>
+</html>

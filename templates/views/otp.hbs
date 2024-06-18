@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recovery</title>
+  <link rel="stylesheet" href="./css/forgot.css">
+</head>
+<body>
+<div class="nav">
+  <div class="navbox">
+    <a href=""><img src="./img/zoho logo.png" alt="" sizes="" srcset="" width="150px" height="auto"></a>
+  </div>
+  <div class="navbox">
+    <a href="">Have a app Account?</a>
+    <a class="highlight" href=""> SIGN IN</a>
+  </div>
+</div>
+
+
+<div class="main-body">
+  <form action="/otp" method="post">
+    <div class="container forgot">
+      <div class="heading box"><h2>Recover Password &nbsp;&nbsp;&nbsp;&nbsp;</h2></div>
+      <p>OTP has been sent: {{hidden}} </p>
+      <div class="box">
+        <label>Enter Your OTP</label>
+        <input type="text" name="otp" id="otp" value="{{body.phone}}" placeholder="OTP">
+        <label for="otp" class="error">{{errorEmail}}</label>
+      </div>
+      <div class="box button">
+        <button type="submit">Verify</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+<script src="./js/chat.js"></script>
+</body>
+</html>

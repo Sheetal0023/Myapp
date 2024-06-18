@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  --navfontcolor: black;
+  --navhighlightcolor: red;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  
+}
+
+.nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--navfontcolor);
+  padding: 0.5rem;
+}
+
+.navbox .highlight {
+  color: var(--navhighlightcolor);
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.main-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  gap: 1rem;
+  padding-top: 7rem;
+}
+
+.box {
+  width: 100%;
+}
+
+label, input, button{
+  width: 100%;
+
+}
+
+.box img {
+  position: absolute;
+  margin-left: -50px;
+  margin-top: 3px;
+}
+
+
+label {
+  display: block;
+  padding-bottom: 5px;
+  font-size: smaller;
+}
+
+.box input, .box button {
+  height: 2rem;
+  margin-bottom: 0rem;
+}
+
+.box input {
+  border-color: gray;
+  padding-left: 5px;
+}
+
+p, input[type=checkbox] {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+
+}
+
+
+button {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+

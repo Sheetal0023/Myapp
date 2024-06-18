@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Sheetal</title>
+        <link rel="icon" href="./img/icon.png" type="image/icon">
+        <link rel="stylesheet" href="./css/style.css">
+        {{>style}}
+    </head>
+    <body>
+        {{>header}}
+        <div class="login-page">
+            <h2>Delete Task</h2>
+            <form action="deletetask" method="post">
+                <p>Discription</p>
+                <input type="text" name="discription" placeholder="Discription">
+                <button type="submit">Delete Task</button>
+            </form>
+            <span>To confirm press Delete Task</span>
+        </div>
+        <div class="footer">{{>footer}}</div>
+    </body>
+</html>
