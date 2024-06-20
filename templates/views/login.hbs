@@ -32,10 +32,12 @@
     <link rel="stylesheet" href="./css/signin.css">
 </head>
 <body>
+
+    <img  class="image"src="./img/background-login.jpg" alt="" width="1000px">
     <form action="/login" method="post">
     <div class="container">
         <div class="box">
-            <img src="./img/zoho logo.png" alt="" width="120px" height="auto">
+            {{!-- <img src="./img/zoho logo.png" alt="" width="120px" height="auto"> --}}
         </div>
         <div class="box">
             <h2>Sign In</h2>
@@ -48,10 +50,13 @@
             <label for="password" class="label">Password</label>
             <input type="password" name="password" id="password" placeholder="Password">
             <label class="error">{{errorpass}}{{errorCredentials}}</label>
+            <div class="box linkOne">
+                <a href="/forgot">Forgot Password ?</a>
+            </div>
             <button type="submit">Next</button>
         </div>
-        <div class="box link">
-            <p>Don't have a Zoho account? <a href="">Sign up now</a></p>
+        <div class="box linkTwo">
+            <p>Don't have a Zoho account? <a href="/register">Sign up now</a></p>
         </div>
     </div>
     </form>

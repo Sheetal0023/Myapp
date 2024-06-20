@@ -9,11 +9,11 @@
 <body>
 <div class="nav">
   <div class="navbox">
-    <a href=""><img src="./img/zoho logo.png" alt="" sizes="" srcset="" width="150px" height="auto"></a>
+    <a href="/"><img src="./img/zoho logo.png" alt="" sizes="" srcset="" width="100px" height="auto"></a>
   </div>
   <div class="navbox">
-    <a href="">Have a app Account?</a>
-    <a class="highlight" href=""> SIGN IN</a>
+    Have a app Account?
+    <a class="highlight" href="/login"> SIGN IN</a>
   </div>
 </div>
 
@@ -22,7 +22,7 @@
   <form action="/otp" method="post">
     <div class="container forgot">
       <div class="heading box"><h2>Recover Password &nbsp;&nbsp;&nbsp;&nbsp;</h2></div>
-      <p>OTP has been sent: {{hidden}} </p>
+      <p>OTP has been sent {{hidden}} </p>
       <div class="box">
         <label>Enter Your OTP</label>
         <input type="text" name="otp" id="otp" value="{{body.phone}}" placeholder="OTP">
@@ -35,6 +35,5 @@
   </form>
 
 </div>
-<script src="./js/chat.js"></script>
 </body>
 </html>

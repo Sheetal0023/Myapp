@@ -11,6 +11,7 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: sans-serif;
+    font-size: small;
 
 }
 
@@ -24,8 +25,8 @@ body {
 
 .part{
     display: flex;
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
 }
 
 .one {
@@ -33,8 +34,8 @@ body {
  flex-direction: column;
  align-items: start;
  justify-content: start;
- width: 700px;
- padding: 50px;
+ width: 600px;
+ padding: 40px;
 }
 
 .two {
@@ -55,7 +56,7 @@ a{
     border: 3px solid #1b2e35;
     /* border-radius: 5px; */
     margin:10px 0 0 0;
-    font-size: large; 
+    font-size: small; 
     
 }
 
@@ -82,26 +83,38 @@ a{
 .linkTwo:hover {
     background-color: #10dee9;
     color: #1b2e35;
-    /* color: white; */
-    transition: all 2s;
+    transition: all 1s;
 }
 
 h1{
-    font-size: 5rem;
+    font-size: 4rem;
+    color: green;
+    animation-name: success;
+    animation-duration: 5s;
 }
+
+
 
 h3 {
     font-weight: 100;
-    font-size: large;
+    font-size: medium;
 }
 
 p{
     margin: 60px 0 15px 0;
-    font-size: large;
+    font-size: medium;
 }
 
 .error{
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+@keyframes success {
+    0% {color: green; transform: translateX(0);}
+    25% {color: green; transform: translateY(-100%);}
+    50% {color: rgb(14, 235, 14); transform: translateY(0);}
+    75% {color: green; transform: translateX(-70);}
+    100% {color: green; transform: translateX(0);}
 }

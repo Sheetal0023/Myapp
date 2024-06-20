@@ -201,7 +201,8 @@ router.post('/login', async(req, res) => {
             title: 'Error',
             errorMessage: e.message,
             linkFirst: '/',
-            linkSecond: '/forgot'
+            linkSecond: '/forgot',
+            linkValue: 'Try Again'
         })
     }
 })
@@ -241,8 +242,11 @@ router.get('/logout', auth, async(req, res) => {
          })
     } catch(e){
         res.status(501).render('error',{
-            title:'Error',
-            error:e.message
+            title: 'Error',
+            errorMessage: e.message,
+            linkFirst: '/',
+            linkSecond: '/forgot',
+            linkValue: 'Try Again'
         })
     }
 })
@@ -295,7 +299,8 @@ router.post('/changepassword',auth, async(req,res)=>{
             title: 'Error',
             errorMessage: e.message,
             linkFirst: '/',
-            linkSecond: '/forgot'
+            linkSecond: '/forgot',
+            linkValue: 'Try Again'
         })
     }
 })
@@ -344,7 +349,7 @@ router.post('/forgot', async(req, res)=>{
         } else {
 
             const number = useremail.phone.toString()
-            const x = "XXXXXXX"
+            const x = "XXXXX-XX"
             const hidden = x.concat(number.slice(7, 10))
             const token = await useremail.generateForgotAuthToken()
             res.cookie('forgot', token)
@@ -358,7 +363,8 @@ router.post('/forgot', async(req, res)=>{
             title: 'Error',
             errorMessage: e.message,
             linkFirst: '/',
-            linkSecond: '/forgot'
+            linkSecond: '/forgot',
+            linkValue: 'Try Again'
         })
     }
 })
@@ -382,6 +388,7 @@ router.post('/mobileNumber', forgotAuth, async(req, res) => {
             const otpSMS = smsOTP()
             const user = await User.findOne({phone:phone})
             console.log(otpSMS)
+            sendMessage(otpSMS, user.phone)
             user.otp = otpSMS
             await user.save()
             res.render('otp', {})
@@ -423,7 +430,8 @@ router.post('/otp', forgotAuth, async(req,res)=>{
         title: 'Error',
         errorMessage: e.message,
         linkFirst: '/',
-        linkSecond: '/forgot'
+        linkSecond: '/forgot',
+        linkValue: 'Try Again'
     })
   }
 })
@@ -470,7 +478,7 @@ router.post('/newpass' ,forgotAuth ,async(req, res)=>{
             res.render('success', {
                 mainHead: 'Success',
                 describe: 'Your Password has been changed successfully',
-                linkFirst: '',
+                linkFirst: '/',
                 linkSecond: '/login'
             })
         }
@@ -479,7 +487,8 @@ router.post('/newpass' ,forgotAuth ,async(req, res)=>{
             title: 'Error',
             errorMessage: e.message,
             linkFirst: '/',
-            linkSecond: '/forgot'
+            linkSecond: '/forgot',
+            linkValue: 'Try Again'
         })
     }
     

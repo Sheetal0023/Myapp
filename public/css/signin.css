@@ -6,29 +6,37 @@
 
 body {
     min-height: 100vh;
-    background-color: rgba(220, 220, 220, 0.6);
-    background-image:  url("../img/pattern-png.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: aquamarine; */
+    font-size: small;
+    font-family: sans-serif;
+}
+
+.image {
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
 }
 
 .container {
+    position: relative;
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
     gap: 0.5rem;
-    background-color: white;
-    padding: 50px;
+    background-color: hsla(192, 61%, 40%, 0.15);
+    padding: 30px;
+    border-radius: 20px;
 
 }
+
+
 
 .box {
     display: flex;
@@ -37,7 +45,8 @@ body {
     flex-direction: column;
     align-items: start;
     /* flex-wrap: wrap; */
-    min-width: 500px;
+    min-width: 400px;
+    max-width: 450px;
 
 }
 
@@ -45,18 +54,31 @@ body {
 .box input, .box button{
     display: inline;
     width: 100%;
-    height: 50px;
+    height: 45px;
     margin-top: 10px;
     padding: 10px;
     border: 0.5px solid black;
+    border-radius: 10px;
     /* flex-wrap: wrap; */
+}
+
+.box input {
+    opacity: 0.8;
 }
 
 .box button {
     border-color: transparent;
     border-radius: 5px;
     padding: 10px;
+    margin-top: 20px;
 
+}
+
+.box button:hover{
+    color: White;
+    border-radius: 20px;
+    background-color: midnightblue;
+    transition: all 1s;
 }
 
 .input {
@@ -69,20 +91,35 @@ body {
     cursor: pointer;
 }
 
-.link {
-    padding: 2rem 2rem 2rem 0;
+.linkOne {
+    padding-top: 0.3rem;
+    /* background-color: teal; */
+    align-items: end;
+}
+
+.linkTwo {
+    padding: 0.3rem 2rem 2rem 0;
 
 }
-.link a {
+.linkOne a {
     text-decoration: none;
-    color:  rgb(18, 177, 240);
-    font-weight: bolder;
+    color:rgb(222, 12, 198);
+    font-weight: bold;
+}
+
+.linkTwo a {
+    text-decoration: none;
+    color: blue;
+
+}
+
+ .linkOne a:hover, .linkTwo a:hover {
+    text-shadow: 2px 2px 8px rgb(242, 255, 0);
+    color: rgb(229, 11, 229)
 }
 
 .label {
     display: block;
-    /* color: red; */
-    /* background-color: yellow; */
     padding: 20px 0 0 0;
 }
 
