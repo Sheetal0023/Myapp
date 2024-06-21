@@ -7,6 +7,8 @@
 body {
     min-height: 100vh;
     display: flex;
+    background-image: url('../img/milad-fakurian.jpg');
+    background-size: cover;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -30,7 +32,7 @@ body {
     align-items: start;
     flex-direction: column;
     gap: 0.5rem;
-    background-color: hsla(192, 61%, 40%, 0.15);
+    background-color: rgba(245, 245, 245, 0.447);
     padding: 30px;
     border-radius: 20px;
 
@@ -83,11 +85,12 @@ body {
 
 .input {
     display:inline-block;
+    opacity: 0.9;
 
 }
 
 .box button {
-    background-color: rgb(18, 177, 240);
+    background-color: rgb(252, 133, 14);
     cursor: pointer;
 }
 
@@ -124,7 +127,9 @@ body {
 }
 
 .error {
+    display: block;
     color: red;
+    font-size: small;
 }
 
 @media screen and (max-width: 450px ) {
