@@ -133,6 +133,10 @@ body {
 }
 
 @media screen and (max-width: 450px ) {
+    body {
+        font-size: medium;
+    }
+    
     .input {
         width: 100%;
     }
