@@ -1,0 +1,402 @@
+/* Roboto Mono font for Header  */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Header Color */
+  --HEADERBG: rgb(20, 143, 192);
+  --HEADERCL: white;
+
+  /* Box Color */
+  --IMGBGCL: rgb(249 224 10);
+  
+
+  /* Footer Color */
+  --FOOTERBG: rgb(52, 40, 40);
+  --FOOTERCL: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  background-color: var(--HEADERBG);
+  color: var(--HEADERCL);
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  padding: 0 0.5rem;
+  z-index: 1;
+  
+
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.head-ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+.two {
+  flex: 1;
+}
+
+.three li:last-child {
+  background-color: red;
+  padding: 0.2rem;
+
+}
+
+.three .head-ul li:last-child a {
+  color: white;
+  font-weight: bolder;
+
+}
+
+li a {
+  text-decoration: none;
+  padding: 0.25rem;
+  color: var(--HEADERCL);
+}
+
+.nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.split h3 {
+  font-size: 2.5rem;
+}
+
+.split video {
+ width: 100%;
+ height: auto;
+}
+
+.split img {
+  width: 100%;
+  height: auto;
+}
+
+.startlink  {
+  background-color: red;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.footer {
+  text-align: center;
+  background-color: var(--FOOTERBG);
+  color: var(--FOOTERCL);
+  bottom: 0;
+  font-size: 0.75rem;
+  padding: 1rem;
+}
+
+.footer p {
+  padding-top: 1rem;
+}
+
+
+.box {
+  display: flex;
+  background-color: var(--IMGBGCL);
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  gap: 2px;
+  
+
+}
+
+
+.split {
+  max-width: 550px;
+  text-align: start;
+  background-color: transparent;
+  color: black;
+  align-items: center;
+  padding: 2rem 0.2rem;
+}
+
+.back {
+  background-color: #17669f;
+  margin-top: 2rem;
+}
+
+.col {
+  color: white;
+  /* background-color: chartreuse; */
+  
+}
+
+.split > * {
+  margin: 1rem 0;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.background {
+  background-color: transparent;
+  color: white;
+}
+
+.allcard {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap;
+  gap: 2rem;
+  padding-top: 1rem;
+  /* background-color: pink; */
+
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  width: 250px;
+  height: auto;
+  box-shadow: 0px 1px 5px 1px black;
+  border-radius: 10px;
+  /* background-color: pink; */
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: scale(105%);
+}
+
+.card img {
+  background-color: transparent;
+}
+
+.card p {
+  text-align: center;
+  padding: 1rem;
+}
+
+.currentCount {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.countBox {
+  /* background-color: aquamarine; */
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: start;
+  gap: 1.5rem;
+
+}
+
+
+.valueBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  /* background-color: chocolate; */
+
+}
+
+.value {
+  font-size: 2.5rem;
+  padding: 0 0 5px 0;
+  /* margin-right: ; */
+  justify-content: space-between;
+  /* background-color: #4180ae; */
+}
+
+.valueName {
+  /* background-color: cadetblue; */
+  width: 100px;
+  display: block;
+  font-size: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: start;
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid #5aa1d4;
+}
+
+.light {
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+
+
+.link{
+  padding: 15px;
+  margin: 10px;
+  /* background-color; */
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: 1px solid;
+  font-weight: bold;
+}
+
+.link:hover {
+  color:#17669f;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 1s;
+}
+
+/* Here Code Start About middle navbar */
+.centerOne{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+}
+
+.middleBar {
+  width: 80vw;
+}
+
+.middle{
+  /* background-color: azure; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+}
+
+.middleNav{
+  background-color: white;
+  text-align: center;
+  position: sticky;
+  top: 70px;
+  padding: 15px;
+  /* z-index: ; */
+  
+}
+
+.middleNav ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.middleNav li a {
+  display: block;
+  padding: 10px;
+  /* background-color: white; */
+  color: black;
+  border-radius: 25px;
+  font-weight: bold;
+
+}
+
+
+.middle{
+  min-height: 50vh;
+}
+
+/* .One {
+  background-color: #17669f;
+}
+
+.Two {
+  background-color: burlywood;
+}
+
+.Three {
+  background-color: chartreuse;
+}
+
+.Four {
+  background-color: darkgoldenrod;
+} */
+
+/* Video Cards  */
+
+.middle li {
+
+  width: 250px;
+}
+
+.middle {
+ display: flex;
+ align-items: start;
+
+}
+
+.listed-video {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1rem
+}
+
+.peragraph-middle {
+ padding: 20px 0 20px 0;
+}
+.videocard {
+  background-color: yellow;
+  text-align: center;
+  padding: 10px 0 0 0 ;
+
+}
+
+.videocard img {
+   width: 200px;
+   height: 150px;
+}
+
+.videoContent {
+  background-color: white;
+  box-shadow: 0px 0px 8px 0 gray;
+  padding: 10px;
+}
+
+.videoContent p {
+  padding-top: 10px;
+  color: rgb(69, 67, 67);
+  font-size: small;
+}
