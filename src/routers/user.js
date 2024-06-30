@@ -436,7 +436,7 @@ router.post('/otp', forgotAuth, async(req,res)=>{
   }
 })
 
-router.get('/newpass',async(req,res)=>{
+router.get('/newpass', async(req, res)=>{
     res.render('newpass',{title:'Login'})
 })
 router.post('/newpass' ,forgotAuth ,async(req, res)=>{
@@ -505,9 +505,17 @@ router.get('/deleteuser', auth, async(req,res)=>{
          await Task.deleteOne({
              owner:req.user._id
          })
-        res.render('home',{ title:'Home'})
+        
+         res.render('success', {
+                mainHead: 'Success',
+                describe: 'Your Account has been Deleted',
+                linkFirst: '/',
+                linkSecond: '/register',
+                linkValue: 'Register'
+         })
 
     } catch(e){
+        // console.log(e)
         res.status(404).render('error',{
             title:'Error',
             error:e.message

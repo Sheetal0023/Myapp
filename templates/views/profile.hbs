@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html>
     <head>
          <title>Sheetal</title>
@@ -29,4 +29,71 @@
 
         <div class="footer">{{>footer}}</div>
     </body>
+</html> --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <nav class="nav">
+                <!-- <img class="one image" src="../test2/img/profile.png" alt=""> -->
+            <div class="two">
+                <ul class="head-ul">
+                    <li><a href="/profile">Home</a></li>
+                    <li><a href="">Shop</a></li>
+                </ul>
+        
+            </div>
+            <div class="three">
+                <ul class="head-ul">
+                    <!-- <li><a href="">Sign In</a></li> -->
+                    <li>
+                        <div class="dropdown">
+                            <img  class="settingIcon" src="./img/settings-9-32.png" alt="" width="40px">
+                            <div class="dropdown-content">
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/key-4-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/">Change Password</a></div>
+                               </div>
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/logout-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/logout">Logout</a></div>
+                                </div>
+                                <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/account-logout-32.ico" alt="" width="25px" style="transform: rotate(180deg); margin-left: 1px;"></div>
+                                    <div class="settingListLink"><a href="/logoutall">Logout all</a></div>
+                               </div>
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/delete-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/deleteuser">Delete Account</a></div>
+                                </div>
+        
+                            </div>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="sidebar">
+            <div class="sidebarContent">Hello {{title}}</div>
+        </div>
+        <div class="list">
+            <div class="listValue">123</div>
+            <div class="listValue">123</div>
+            <div class="listValue">123</div>
+            
+        </div>
+        
+        <div class="footer">Footer</div>
+    </div>
+</body>
 </html>
