@@ -1,13 +1,21 @@
 const express = require('express')
+
 const User = require('../models/users')
 const Task = require('../models/tasks')
+const amc = require('../models/companyAmcs')
+
 const router = new express.Router()
+
 const bcrypt = require('bcryptjs')
+
 const auth = require('../middleware/auth')
 const forgotAuth = require('../middleware/forgotAuth')
 const smsAuth = require('../middleware/smsAuth')
+
 const { smsOTP, sendMessage} = require('../sms/smsVerify')
+
 const validator = require('validator')
+
 
 
 
@@ -210,18 +218,18 @@ router.post('/login', async(req, res) => {
 router.get('/profile', auth, async(req, res)=>{
     try{
   
-        const task = await Task.find({
-            owner:req.user._id
-        })
+        const amcs = await amc.find({})
 
+        console.log(amcs)
         res.render('profile',{
             title:req.user.username,
             email:req.user.email,
-            selectedUsers:task})
+            cAmcs: amcs 
+        })
 
 
       } catch(e){
-        // console.log(e)
+        console.log(e)
          res.status(501).render('error',{
             title:'Error',
             error:e.message
