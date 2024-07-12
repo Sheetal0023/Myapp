@@ -218,10 +218,15 @@ router.get('/profile', auth, async(req, res)=>{
   
         const amcs = await amc.find({})
 
+        console.log(amcs)
         res.render('profile',{
             title:req.user.username,
             email:req.user.email,
+<<<<<<< HEAD
             amcs 
+=======
+            cAmcs: amcs 
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
         })
 
 

@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
+<<<<<<< HEAD
 const jwt = require('jsonwebtoken')
+=======
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
 
 const companySchema = new mongoose.Schema({
     name: {
@@ -66,6 +69,7 @@ const companySchema = new mongoose.Schema({
 
 })
 
+<<<<<<< HEAD
 companySchema.methods.generateForgotAuthToken = async function() {
     const compuser = this 
     const comptoken = jwt.sign({_id:compuser.id.toString()}, process.env.COMP_FORGOT_AUTH_KEY)
@@ -82,6 +86,8 @@ companySchema.methods.generateAuthToken = async function() {
     return comptoken
 }
 
+=======
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
 const companyUser = mongoose.model('companyUser', companySchema)
 
 module.exports = companyUser

@@ -3,6 +3,7 @@ const companyUser = require('../models/companies')
 const router = new express.Router()
 const companyAmcs = require('../models/companyAmcs')
 const validator = require('validator')
+<<<<<<< HEAD
 const bcrypt = require('bcryptjs')
 const compauth = require('../middleware/compauth')
 const compforgotAuth = require('../middleware/compforgotAuth')
@@ -32,10 +33,38 @@ const { smsOTP, sendMessage} = require('../sms/smsVerify')
 //         price: '2500',
 //         owner: user._id
 //     })
+=======
+
+router.get('/gta', async(req, res) => {
+   try{
+    const user = new companyUser({
+        name: "Sheetal Sharma",
+        password: "Sheetal123",
+        businessName: "Steel",
+        mobileNumber: "9876543210",
+        email: "abc@gmail.com",
+        address: "Street unkwown",
+        zip: "123456789",
+        country: "USA",
+
+    })
+    const amc = new companyAmcs({
+        description: 'Cooler',
+        price: '250',
+        owner: user._id
+    })
+
+    const amcOne = new companyAmcs({
+        description: 'Refrigerator',
+        price: '2500',
+        owner: user._id
+    })
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
 
 
 
 
+<<<<<<< HEAD
 //     res.send(user)
 
 //     await user.save()
@@ -53,6 +82,25 @@ router.get('/companyregistration', async(req, res) => {
 })
 
 router.post('/companyregistration', async(req, res) => {
+=======
+    res.send(user)
+
+    await user.save()
+    await amc.save()
+    await amcOne.save()
+    // await amcTwo.save()
+} catch(e) {
+    console.log(e)
+}
+})
+   
+
+router.get('/abc', async(req, res) => {
+    res.render('compuser', {})
+})
+
+router.post('/abc', async(req, res) => {
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
     try {
 
         const first = req.body.first
@@ -85,7 +133,11 @@ router.post('/companyregistration', async(req, res) => {
             mobileNumber: mobileNumber
         })
 
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
         if(!first) {
             errors[0] = 'Please Provive first Name'
         }
@@ -115,7 +167,10 @@ router.post('/companyregistration', async(req, res) => {
 
         if(!password) {
             errors[5] = 'Please give a password'
+<<<<<<< HEAD
 
+=======
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
         }
         if(!confirmPassword) {
             errors[6] = 'Confirm password is required field'
@@ -145,6 +200,7 @@ router.post('/companyregistration', async(req, res) => {
             console.log(zip.length)
             errors[11] = 'Invalid Zip code'
         }
+<<<<<<< HEAD
    
 
         if(errors.length == 0) {
@@ -154,6 +210,19 @@ router.post('/companyregistration', async(req, res) => {
             const user = new companyUser({
                 name: `${first} ${last}`,
                 password: hashPassword,
+=======
+
+    
+
+        // await user.save()
+        // console.log(req.body)    
+
+        if(errors.length == 0) {
+
+            const user = new companyUser({
+                name: `${first} ${last}`,
+                password: password,
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
                 businessName: businessName,
                 mobileNumber: mobileNumber,
                 email: email,
@@ -166,6 +235,7 @@ router.post('/companyregistration', async(req, res) => {
                     CountryCodes: countryCode
                 }
             })
+<<<<<<< HEAD
 
             await user.save()
             res.render('success', {
@@ -175,6 +245,11 @@ router.post('/companyregistration', async(req, res) => {
                 linkSecond: '/companylogin',
                 linkValue: 'Login'
             })
+=======
+            res.send(user)
+
+            await user.save()
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
 
         } else {
             res.render('compuser', {
@@ -185,6 +260,7 @@ router.post('/companyregistration', async(req, res) => {
         }
         
     } catch (e) {
+<<<<<<< HEAD
         res.render('error', {
             title: 'Error',
             errorMessage: e.message,
@@ -248,10 +324,13 @@ router.post('/companylogin', async(req, res) => {
         }
 
     } catch (e) {
+=======
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
         console.log(e)
     }
 })
 
+<<<<<<< HEAD
 router.get('/companyprofile', compauth, async(req, res) => {
     try{
         const amcs = await companyAmcs.find({
@@ -548,6 +627,8 @@ router.post('/registeramc', compauth, async(req, res) => {
 router.post('/getamcdetails', async(req, res) => {
     res.send(req.body)
 })
+=======
+>>>>>>> 505ecf3f0c3fc9ece6350c30af13c3d9610b7e3c
 
 
 module.exports = router
