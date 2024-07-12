@@ -11,6 +11,8 @@ const { AsyncLocalStorage } = require('async_hooks')
 
 const userRouter = require('./routers/user')
 const taskRouter = require('./routers/task')
+const companyUserRouter = require('./routers/companyUser')
+const amcRouter = require('./routers/amc')
 
 const cookieParser = require('cookie-parser')
 
@@ -30,6 +32,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(userRouter)
 app.use(taskRouter)
+app.use(companyUserRouter)
+app.use(amcRouter)
 
 
 app.listen(port,()=>{

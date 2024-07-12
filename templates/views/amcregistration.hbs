@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./css/companyprofile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <nav class="nav">
+                <!-- <img class="one image" src="../test2/img/profile.png" alt=""> -->
+            <div class="two">
+                <ul class="head-ul">
+                    <li><a href="/profile">Home</a></li>
+                    <li><a href="">Shop</a></li>
+                    <li><a href="/registeramc">Register AMC</a></li>
+                </ul>
+        
+            </div>
+            <div class="three">
+                <ul class="head-ul">
+                    <li>
+                        <div class="dropdown">
+                            <img  class="settingIcon" src="./img/settings-9-32.png" alt="" width="40px">
+                            <div class="dropdown-content">
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/key-4-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/">Change Password</a></div>
+                               </div>
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/logout-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/logout">Logout</a></div>
+                                </div>
+                                <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/account-logout-32.ico" alt="" width="25px" style="transform: rotate(180deg); margin-left: 1px;"></div>
+                                    <div class="settingListLink"><a href="/logoutall">Logout all</a></div>
+                               </div>
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/delete-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/deleteuser">Delete Account</a></div>
+                                </div>
+        
+                            </div>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="sidebar">
+            <div class="sidebarContent">Hello {{title}}</div>
+        </div>
+        <div class="list" id="append">
+                <div class="listValue">
+                    <div class="formHeading">
+                        <h2>AMC Registration form</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, porro quidem? Hic itaque fugiat nesciunt voluptatum dignissimos quos laborum debitis ex ab accusamus maiores iure iste, eligendi, distinctio aspernatur fuga.</p>
+                    </div>
+                    <form action="/companyamcregistration" method="post">
+                    <div class="formData">
+                        <label for="" class="inputlabel">Device Cetagory</label>
+                        <select name="device_cetagory" id="device_cetagory" >
+                            <option value="" disabled selected>-Select-</option>
+                            <option value="Power Devices">Power Devices</option>
+                            <option value="Electronics Devices">Electronics Devices</option>
+                            <option value="Cooling Devices">Cooling / Heating Devices</option>
+                        </select>
+                        <p class="error">{{error.[0]}}</p>
+                        
+                        <label for="" class="inputlabel">Device Name</label>
+                        <select name="device_name" id="device_name" disabled >
+                            <option value="" selected>-Select-</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                        <p class="error">{{error.[1]}}</p>
+
+                        <label for="" class="inputlabel">Contract Period</label>
+                        <select name="contract_period" id="contract_period" disabled>
+                            <option value="" selected disabled>-Select-</option>
+                            <option value="Half Year">Half Year</option>
+                            <option value="One Year">One Year</option>
+                            <option value="Two Year">Two Years</option>
+                            <option value="Five Year">Five Years</option>
+                        </select>
+                        <p class="error">{{error.[2]}}</p>
+
+                        <div class="double">
+                            <div class="full">
+                                <label for="" class="inputlabel">Maintenance Period</label>
+                                <select name="maintenance_period_one" id="maintenance_period">
+                                    <option value="" selected disabled>-Select-</option>
+                                    <option value="One Month">Every month</option>
+                                </select>
+                                <p class="error">{{error.[3]}}</p>
+                            </div>
+                            <div class="full">
+                                <label for="" class="inputlabel">Charges</label>
+                                <input type="text" name="charges_one" id="charges" placeholder="Charges" value="{{charges_one}}">
+                                <p class="error">{{error.[7]}}</p>
+                            </div>
+                            
+                        </div>
+                        <div class="double">
+                            <div class="full">
+                                <label for="" class="inputlabel">Maintenance Period</label>
+                                
+                                <select name="maintenance_period_two" id="maintenance_period" >
+                                    <option value="" selected disabled>-Select-</option>
+                                    <option value="Two Months">Two months</option> 
+                                </select>
+                                <p class="error">{{error.[4]}}</p>
+                            </div>
+                            <div class="full">
+                                <label for="" class="inputlabel">Charges</label>
+                                <input type="text" name="charges_two" id="charges" placeholder="Charges" value="{{charges_two}}">
+                                <p class="error">{{error.[8]}}</p>
+                            </div>
+                            
+                        </div>
+                        <div class="double">
+                            <div class="full">
+                                <label for="" class="inputlabel">Maintenance Period</label>
+                                <select name="maintenance_period_three" id="maintenance_period">
+                                    <option value="" selected disabled>-Select-</option>
+                                    <option value="Three Months">Three months</option>
+                                </select>
+                                <p class="error">{{error.[5]}}</p>
+                            </div>
+                            <div class="full">
+                                <label for="" class="inputlabel">Charges</label>
+                                <input type="text" name="charges_three" id="charges" placeholder="Charges" value="{{charges_three}}">
+                                <p class="error">{{error.[9]}}</p>
+                            </div>
+                            
+                        </div>
+                        <div class="double">
+                            <div class="full">
+                                <label for="" class="inputlabel">Maintenance Period</label>
+                                <select name="maintenance_period_four" id="maintenance_period">
+                                    <option value="" selected disabled>-Select-</option>
+                                    <option value="Six Months">Six months</option>
+                                </select>
+                                <p class="error">{{error.[6]}}</p>
+                            </div>
+                            <div class="full">
+                                <label for="" class="inputlabel">Charges</label>
+                                <input type="text" name="charges_four" id="charges" placeholder="Charges" value="{{charges_four}}">
+                                <p class="error">{{error.[10]}}</p>
+                            </div>
+                            
+                        </div>
+                        <label for="" class="inputlabel">Contract period charges excluding maintenance charges</label>
+                        <input type="text" name="contract_charges" id="contract_charges"  placeholder="Contract charges" value="{{contract_charges}}">
+                        <p class="error">{{error.[11]}}</p>
+                        <div class="button">
+                            <button type="submit">Register AMC</button>
+                        </div>
+                        
+
+                    </div>
+                    </form>
+                </div>
+                
+        </div>
+        
+        
+        <div class="footer">Footer</div>
+    </div>
+
+ <script>
+
+        
+        document.addEventListener('click', () => {
+            const device_cetagory = document.getElementById('device_cetagory')
+            const newDevice = device_cetagory.options[device_cetagory.selectedIndex].text
+            
+            const device_name = document.getElementById('device_name')
+            const contract_period = document.getElementById('contract_period')
+
+
+            if(newDevice != '-Select-') {
+                
+                device_name.disabled = false
+                contract_period.disabled = false
+            } 
+
+            if(newDevice == 'Power Devices') {
+                device_name.options[1].value = "Transformer" 
+                device_name.options[1].text = "Transformer"
+                device_name.options[2].value = "Diesel Generator" 
+                device_name.options[2].text = "Disel Generator"
+                device_name.options[3].value = "Circuit Breaker" 
+                device_name.options[3].text = "Circuit Breaker"
+                device_name.options[4].value = "Bus Bar" 
+                device_name.options[4].text = "Bus Bar"
+                device_name.options[5].value = "Power Cable" 
+                device_name.options[5].text = "Power Cabel"
+                
+            }
+            if(newDevice == 'Electronics Devices') {
+               device_name.options[1].value = "Television" 
+                device_name.options[1].text = "Television"
+                device_name.options[2].value = "Inverter" 
+                device_name.options[2].text = "Inverter"
+                device_name.options[3].value = "Battery" 
+                device_name.options[3].text = "Battery"
+                device_name.options[4].value = "Washing Machine" 
+                device_name.options[4].text = "Washing machine"
+                device_name.options[5].value = "Microwave" 
+                device_name.options[5].text = "Microwave"
+            }
+            if(newDevice == 'Cooling / Heating Devices') {
+               device_name.options[1].value = "Air conditioner" 
+                device_name.options[1].text = "Air Conditioner"
+                device_name.options[2].value = "Refrigrator" 
+                device_name.options[2].text = "Refrigerator"
+                device_name.options[3].value = "Cooler" 
+                device_name.options[3].text = "Cooler"
+                device_name.options[4].value = "Heater" 
+                device_name.options[4].text = "Room Heater"
+                device_name.options[5].remove()
+            }
+
+
+        })
+
+    </script>
+
+</body>
+</html>

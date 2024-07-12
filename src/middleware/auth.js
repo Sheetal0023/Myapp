@@ -18,7 +18,8 @@ const auth = async(req, res, next) => {
                   title: 'Error',
                   errorMessage: e.message,
                   linkFirst: '/',
-                  linkSecond: '/forgot'
+                  linkSecond: '/login',
+                  linkValue: 'Login'
               })
       }    
 }

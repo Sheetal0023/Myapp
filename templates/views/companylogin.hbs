@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Login</title>
+    <link rel="stylesheet" href="./css/signin.css">
+</head>
+<body>
+
+    <div>
+     {{!-- <img src="./img/background-login.jpg" alt="" width="1000px"> --}}
+
+    <form action="/companylogin" method="post">
+    <div class="container">
+        <div class="box">
+            {{!-- <img src="./img/zoho logo.png" alt="" width="120px" height="auto"> --}}
+        </div>
+        <div class="box">
+            <h2>Company Sign In</h2>
+            <p>to access Zoho Home</p>
+        </div>
+        <div class="box input">
+            <label for="email" class="label">Email address or Mobile Number</label>
+            <input type="text" name="email" id="email" placeholder="Email address Or Mobile number" value="{{formdata.[0]}}">
+            <label class="error">{{error.[0]}}</label>
+            <label for="password" class="label">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" value="{{formdata.[1]}}">
+            <label class="error">{{error.[1]}}</label>
+            <div class="box linkOne">
+                <a href="/companyforgot">Forgot Password ?</a>
+            </div>
+            <button type="submit">Next</button>
+        </div>
+        <div class="box linkTwo">
+            <p>Don't have a Company account? <a href="/companyregistration">Registration Now</a></p>
+        </div>
+    </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  .container {
+    min-height: 100vh;
+    font-family: sans-serif;
+    background-image: linear-gradient(to bottom, purple, 30%, lightblue );
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: transparent; */
+    /* position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1; */
+  }
+  
+  .left a, .right  a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem 0.5rem 1rem 0;
+    color: white;
+  
+    
+  }
+  
+  .form {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    
+   
+  }
+  .formContent {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 10px 1px rgb(229, 11, 244);
+    position: relative;
+  }
+  
+  .formHeading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    color: purple;
+  }
+  
+  input, button, select{
+    width: 100%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 2px solid skyblue;
+    /* margin-bottom: 10px ; */
+    padding-left: 3px ;
+  }
+  
+  input:focus, select:focus {
+    outline: none;
+  
+    border: 3px solid rgb(7, 235, 235);
+  }
+  
+  .pass{
+    position: relative;
+  }
+  
+  .two {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+  }
+  
+  button {
+    color: white;
+    background-color: purple;
+    border: none;
+    margin: 2rem 0;
+    height: 2.5rem;
+    cursor: pointer;
+  }
+  
+  .double {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem
+  }
+
+  .data {
+    width: 100%;
+  }
+  
+  label {
+    /* color: rgb(253, 180, 91); */
+    display: block;
+    color: black;
+    margin-top: 20px;
+  }
+
+  .address {
+    margin-top: 10px;
+  }
+
+  .error {
+    color: red;
+    /* font-weight:; */
+    font-size: smaller;
+  }

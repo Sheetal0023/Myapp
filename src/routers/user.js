@@ -1,13 +1,21 @@
 const express = require('express')
+
 const User = require('../models/users')
 const Task = require('../models/tasks')
+const amc = require('../models/companyAmcs')
+
 const router = new express.Router()
+
 const bcrypt = require('bcryptjs')
+
 const auth = require('../middleware/auth')
 const forgotAuth = require('../middleware/forgotAuth')
 const smsAuth = require('../middleware/smsAuth')
+
 const { smsOTP, sendMessage} = require('../sms/smsVerify')
+
 const validator = require('validator')
+
 
 
 
@@ -189,9 +197,7 @@ router.post('/login', async(req, res) => {
             const token = await useremail.generateAuthToken()
             res.cookie('jwt', token)
             
-            res.render('profile', {
-                title: useremail.username
-            })
+            res.redirect('/profile')
         } 
         
 
@@ -210,18 +216,17 @@ router.post('/login', async(req, res) => {
 router.get('/profile', auth, async(req, res)=>{
     try{
   
-        const task = await Task.find({
-            owner:req.user._id
-        })
+        const amcs = await amc.find({})
 
         res.render('profile',{
             title:req.user.username,
             email:req.user.email,
-            selectedUsers:task})
+            amcs 
+        })
 
 
       } catch(e){
-        // console.log(e)
+        console.log(e)
          res.status(501).render('error',{
             title:'Error',
             error:e.message
@@ -388,7 +393,8 @@ router.post('/mobileNumber', forgotAuth, async(req, res) => {
             const otpSMS = smsOTP()
             const user = await User.findOne({phone:phone})
             console.log(otpSMS)
-            sendMessage(otpSMS, user.phone)
+            // sendMessage(otpSMS, user.phone)
+            console.log(`User OTP ${otpSMS}`)
             user.otp = otpSMS
             await user.save()
             res.render('otp', {})
@@ -436,7 +442,7 @@ router.post('/otp', forgotAuth, async(req,res)=>{
   }
 })
 
-router.get('/newpass',async(req,res)=>{
+router.get('/newpass', async(req, res)=>{
     res.render('newpass',{title:'Login'})
 })
 router.post('/newpass' ,forgotAuth ,async(req, res)=>{
@@ -470,8 +476,6 @@ router.post('/newpass' ,forgotAuth ,async(req, res)=>{
         } else {
             const user = await User.findOne({forgotToken:req.token})
             const newpassword = await bcrypt.hash(password, 8)
-            console.log(newpassword)
-            console.log(user.password)
             user.password = newpassword
             res.clearCookie('forgot')
             await user.save()
@@ -505,9 +509,17 @@ router.get('/deleteuser', auth, async(req,res)=>{
          await Task.deleteOne({
              owner:req.user._id
          })
-        res.render('home',{ title:'Home'})
+        
+         res.render('success', {
+                mainHead: 'Success',
+                describe: 'Your Account has been Deleted',
+                linkFirst: '/',
+                linkSecond: '/register',
+                linkValue: 'Register'
+         })
 
     } catch(e){
+        // console.log(e)
         res.status(404).render('error',{
             title:'Error',
             error:e.message
@@ -523,6 +535,31 @@ router.get('/deleteuser', auth, async(req,res)=>{
 //         error: 'Page is not found'
 //     })
 // })
+
+router.post('/buyamc', auth, async(req, res) => {
+    try {
+
+        const userAmc = await amc.findOne({
+            _id: req.body.id
+        })
+
+        const info = userAmc.userInformation
+        const findOut = info.find((e) => {
+            return e.useremail == req.user.email
+        })
+        if(!findOut) {
+        userAmc.userInformation = userAmc.userInformation.concat({useremail:req.user.email})
+        userAmc.save()
+        res.send(userAmc)
+        } else {
+            res.send('You are already Bought this')
+        }
+    } catch(e) {
+        console.log(e)
+    }
+    
+
+})
 
 
 module.exports = router

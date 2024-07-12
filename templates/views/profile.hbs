@@ -1,32 +1,105 @@
 <!DOCTYPE html>
-<html>
-    <head>
-         <title>Sheetal</title>
-        <link rel="icon" href="./img/icon.png" type="image/icon">
-        <link rel="stylesheet" href="./css/style.css">
-        {{>style}}
-    </head>
-    <body>
-        {{>header}}
-        <div class="login-page">
-           
-            <p>  <h2>All tasks</h2>     
-            {{#each selectedUsers}}
-              discription : {{ this.discription }}<br>
-               completed : {{ this.completed}} <br><br>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./css/companyprofile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <nav class="nav">
+                <!-- <img class="one image" src="../test2/img/profile.png" alt=""> -->
+            <div class="two">
+                <ul class="head-ul">
+                    <li><a href="/profile">Home</a></li>
+                    <li><a href="">Shop</a></li>
+                </ul>
+        
+            </div>
+            <div class="three">
+                <ul class="head-ul">
+                    <!-- <li><a href="">Sign In</a></li> -->
+                    <li>
+                        <div class="dropdown">
+                            <img  class="settingIcon" src="./img/settings-9-32.png" alt="" width="40px">
+                            <div class="dropdown-content">
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/key-4-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/">Change Password</a></div>
+                               </div>
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/logout-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/logout">Logout</a></div>
+                                </div>
+                                <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/account-logout-32.ico" alt="" width="25px" style="transform: rotate(180deg); margin-left: 1px;"></div>
+                                    <div class="settingListLink"><a href="/logoutall">Logout all</a></div>
+                               </div>
+                               <div class="settingList">
+                                    <div class="settingListIcon"><img src="./img/delete-32.ico" alt="" width="25px"></div>
+                                    <div class="settingListLink"><a href="/deleteuser">Delete Account</a></div>
+                                </div>
+        
+                            </div>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="sidebar">
+            <div class="sidebarContent">Hello {{title}}</div>
+        </div>
+        <div class="list">
+            {{#each amcs}}
+             <form action="/buyamc" method="post">
+                <div class="listValue">
+                    <div class="amcHead">
+                        <div class="head One">{{this.device_name}}</div>
+                        <div class="head Two">
+                            ₹{{this.contract_charges}}/-
+                            <div class="contract">{{this.contract_period}}</div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="amcContent">
+                        <div class="amcData">
+                            <div class="first">Device category</div>
+                            <div class="second">{{this.device_cetagory}}</div>
+                        </div>
+                        <div class="amcData">
+                            <div class="first">{{this.maintenance_period_one}}</div>
+                            <div class="second">₹{{this.charges_one}}</div>
+                        </div>
+                        <div class="amcData">
+                            <div class="first">{{this.maintenance_period_two}}</div>
+                            <div class="second">₹{{this.charges_two}}</div>
+                        </div>
+                        <div class="amcData">
+                            <div class="first">{{this.maintenance_period_three}}</div>
+                            <div class="second">₹{{this.charges_three}}</div>
+                        </div>
+                        <div class="amcData">
+                            <div class="first">{{this.maintenance_period_four}}</div>
+                            <div class="second">₹{{this.charges_four}}</div>
+                        </div>
+                        
+                    </div>
+                    <div class="form">
+                        <input type="text" name="id" value="{{this._id}}" hidden>
+                        <button type="submit" class="showBtn"> Buy Now</button>
+                    </div>
+                    
+                </div>
+                
+                </form>
             {{/each}}
-            
-            </p>
-             <p>to see all tasks click on <a href="profile">My Profile</a></p>
-        </div><br>
-        <a href="logout">Logout</a>
-        <a href="logoutall">Logout all</a>
-        <a href="changepassword">Change Password</a>
-        <a href="deleteuser">Delete Account</a><br><br>
-        <a href="createtask">Create Task</a>
-        <a href="deletetask">Delete Task</a>
-
-
-        <div class="footer">{{>footer}}</div>
-    </body>
+        </div>
+        
+        
+        <div class="footer">Footer</div>
+    </div>
+</body>
 </html>

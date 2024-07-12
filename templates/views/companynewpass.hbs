@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recovery</title>
+  <link rel="stylesheet" href="./css/forgot.css">
+</head>
+<body>
+<div class="nav">
+  <div class="navbox">
+    <a href="/"><img src="./img/zoho logo.png" alt="" sizes="" srcset="" width="100px" height="auto"></a>
+  </div>
+  <div class="navbox">
+    Have a app Account?
+    <a class="highlight" href="/login"> SIGN IN</a>
+  </div>
+</div>
+
+
+<div class="main-body">
+  <form action="/companynewpass" method="post">
+    <div class="container forgot">
+      <div class="heading box"><h2>Recover Password &nbsp;&nbsp;&nbsp;&nbsp;</h2></div>
+      <div class="box">
+        <label for="password">New Password</label>
+        <input type="password" name="password" id="password" value="{{body.password}}" placeholder="New Password">
+        <label for="email" class="error">{{errorPass}}</label>
+      </div>
+      <div class="box">
+        <label for="password">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
+        <label for="confirm_password" class="error">{{errorCPass}}{{errorMatch}}</label>
+      </div>
+      <div class="box button">
+        <button type="submit">Confirm</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recovery</title>
+  <link rel="stylesheet" href="./css/forgot.css">
+</head>
+<body>
+<div class="nav">
+  <div class="navbox">
+    <a href=""><img src="./img/zoho logo.png" alt="" sizes="" srcset="" width="100px" height="auto"></a>
+  </div>
+  <div class="navbox">
+    <a href="">Have a Business Account?</a>
+    <a class="highlight" href=""> SIGN IN</a>
+  </div>
+</div>
+
+
+<div class="main-body">
+  <form action="/companymobileNumber" method="post">
+    <div class="container forgot">
+      <div class="heading box"><h2>Recover Password &nbsp;&nbsp;&nbsp;&nbsp;</h2></div>
+      <p>Your Phone is: {{hidden}} </p>
+      <div class="box">
+        <label for="phone">Enter Your Phone Number</label>
+        <input type="text" name="phone" id="phone" value="{{body.phone}}" placeholder="Mobile number">
+        <label for="email" class="error">{{errorEmail}}</label>
+      </div>
+      <div class="box button">
+        <button type="submit">Get OTP</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+</html>
